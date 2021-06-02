@@ -253,7 +253,7 @@ if "py2exe" in sys.argv :
     # Pour la mettre à jour avec un dézippe automatique
 
     # Timezone de pytz :
-    print "Ajout manuel du repertoire Zoneinfo de pytz..."
+    print("Ajout manuel du repertoire Zoneinfo de pytz...")
     import pytz
     zoneinfo_dir = os.path.join(os.path.dirname(pytz.__file__), 'zoneinfo')
     disk_basedir = os.path.dirname(os.path.dirname(pytz.__file__))
@@ -264,7 +264,7 @@ if "py2exe" in sys.argv :
             z.write(os.path.join(absdir, f), os.path.join(zip_dir, f))
 
     # Typelibs Microsoft Speech pour Windows XP
-    print "Ajout manuel du Typelibs Microsoft Speech pour Windows XP..."
+    print("Ajout manuel du Typelibs Microsoft Speech pour Windows XP...")
     nom = "C866CA3A-32F7-11D2-9602-00C04F8EE628x0x5x0.py"
     z.write("noethys/Outils/%s" % nom, "win32com/gen_py/%s" % nom)
 
@@ -277,11 +277,10 @@ if "py2exe" in sys.argv :
     z.close()
 
     # Supprime le répertoire des données exemples de Matplotlib
-    print "Supprime les donnees exemples de Matplotlib si besoin..."
+    print("Supprime les donnees exemples de Matplotlib si besoin...")
     try :
         shutil.rmtree("dist/mpl-data/sample_data")
     except :
         pass
 
-
-print "Fini !"
+print("Fini !")
